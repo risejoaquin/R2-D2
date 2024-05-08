@@ -10,6 +10,6 @@ package mx.itson.r2d2.bussines;
  */
 public class Operation {
     public static void main(String[] args) {
-        System.out.println("Hola putos");
+        System.out.println(":)");
     }
 }
