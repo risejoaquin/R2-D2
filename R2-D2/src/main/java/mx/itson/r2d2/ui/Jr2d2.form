@@ -23,63 +23,56 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="labelUsername" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelSubtotal" min="-2" max="-2" attributes="0"/>
-                                  <Component id="boxPaymentMethod" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelPaymentMethod" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelAdress" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelStore" min="-2" max="-2" attributes="0"/>
-                                  <Component id="buttonSelectFile" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="jScrollPane1" min="-2" pref="400" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="checkBoxPhoneNumber" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="labelTotal" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelIva" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelDiscount" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelShippingCost" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelTipTotal" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelPhoneNumber" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="labelPhoneNumber" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="checkBoxPhoneNumber" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="labelUsername" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelTotal" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelIva" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDiscount" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelShippingCost" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelTipTotal" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelSubtotal" min="-2" max="-2" attributes="0"/>
+                  <Component id="boxPaymentMethod" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelPaymentMethod" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAdress" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelStore" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSelectFile" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="400" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="buttonTip1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="buttonTip2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="buttonTip3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="labelCupon" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="labelCouponConfirm" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textFieldCupon" min="-2" pref="232" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="labelCupon" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textFieldCupon" min="-2" pref="245" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="buttonOkCoupon" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="buttonOkCoupon" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonTip4" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buttonTip1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="buttonTip2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="buttonTip3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="buttonTip4" min="-2" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Component id="labelCouponConfirm" min="-2" pref="37" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -99,40 +92,40 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkBoxPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkBoxPhoneNumber" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="labelPaymentMethod" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="boxPaymentMethod" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Component id="labelCouponConfirm" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelCupon" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textFieldCupon" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonOkCoupon" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="buttonTip1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonTip2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonTip3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonTip4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonTip3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="labelSubtotal" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="labelTipTotal" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="labelShippingCost" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="10" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="labelDiscount" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="labelIva" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="labelTotal" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -202,9 +195,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textFieldCupon">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldCuponActionPerformed"/>
       </Events>
@@ -212,6 +202,11 @@
     <Component class="javax.swing.JLabel" name="labelSubtotal">
       <Properties>
         <Property name="text" type="java.lang.String" value="Subtotal:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTipTotal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Propina: $0.00"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelShippingCost">
@@ -249,10 +244,21 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxPhoneNumberActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JButton" name="buttonOkCoupon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ok"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonOkCouponActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JButton" name="buttonTip1">
       <Properties>
         <Property name="text" type="java.lang.String" value="5%"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonTip1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonTip2">
       <Properties>
@@ -262,28 +268,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonTip2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonTip3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="15%"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="buttonTip4">
       <Properties>
         <Property name="text" type="java.lang.String" value="20%"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonTip4ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelTipTotal">
+    <Component class="javax.swing.JButton" name="buttonTip3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Propina: $ 0"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="buttonOkCoupon">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="OK"/>
-        <Property name="actionCommand" type="java.lang.String" value="OK"/>
+        <Property name="text" type="java.lang.String" value="15%"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonOkCouponActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonTip3ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCouponConfirm">

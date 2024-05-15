@@ -6,6 +6,8 @@ package mx.itson.r2d2.entities;
 
 import java.util.Date;
 
+
+
 /**
  *
  * @author compu
