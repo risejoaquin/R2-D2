@@ -351,7 +351,7 @@ public class Jr2d2 extends javax.swing.JFrame {
            }
                 Operation calc = new Operation();
                 labelSubtotal.setText("Subtotal: $" + subtotal);
-                iva = calc.calcIva(subtotal, ticket.getIva());
+                iva = Operation.calcIva(subtotal, ticket.getIva());
                 labelIva.setText("IVA: $" + iva);
                 shippingCost = calc.calcMultiplication(subtotal, .03);
                 shippingCost = (shippingCost > 200) ? (shippingCost = 200) : (shippingCost += 0); 
