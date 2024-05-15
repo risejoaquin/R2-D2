@@ -313,7 +313,7 @@ public class Jr2d2 extends javax.swing.JFrame {
     private void checkBoxPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxPhoneNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkBoxPhoneNumberActionPerformed
-
+/*Aqui empieza la funcion del boton para seleccionar archivo, junto con el deserializador*/
     private void buttonSelectFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSelectFileActionPerformed
         try{JFileChooser fileChooser = new JFileChooser();
            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
@@ -363,7 +363,9 @@ public class Jr2d2 extends javax.swing.JFrame {
            System.err.println(ex.getMessage());
        }    
     }//GEN-LAST:event_buttonSelectFileActionPerformed
+/*Aqui termina la funcion del boton para seleccionar archivo, junto con el deserializador*/
 
+    /*Aqui empiezan las funciones de los botones de las propinas*/
     private void buttonTip1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTip1ActionPerformed
             Operation calc = new Operation();
             try{tip = calc.calcMultiplication(subtotal, .05);
@@ -423,6 +425,7 @@ public class Jr2d2 extends javax.swing.JFrame {
         catch(Exception ex){
             System.err.println(ex.getMessage());}
     }//GEN-LAST:event_buttonOkCouponActionPerformed
+/*Aqui terminan las funciones de los botones de las propinas*/
 
     /**
      * @param args the command line arguments
