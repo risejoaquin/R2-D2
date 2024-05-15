@@ -284,7 +284,7 @@ public class Jr2d2 extends javax.swing.JFrame {
            }
                 Operation calc = new Operation();
                 labelSubtotal.setText("Subtotal: $" + subtotal);
-                iva = calc.calcIva(subtotal, ticket.getIva());
+                iva = Operation.calcIva(subtotal, ticket.getIva());
                 labelIva.setText("IVA: $" + iva);
                 shippingCost = calc.calcShipping(subtotal, .05);
                 labelShippingCost.setText("Costo de envío: $" + (shippingCost));
@@ -294,7 +294,7 @@ public class Jr2d2 extends javax.swing.JFrame {
        }catch (Exception ex){
            System.err.println(ex.getMessage());
        }
-        }                                                
+    }
 
     private void buttonTip1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
             try{tip = subtotal * .05;
@@ -305,14 +305,8 @@ public class Jr2d2 extends javax.swing.JFrame {
             System.err.println(ex.getMessage());}
     }                                          
 
-    private void buttonTip2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-            try{tip = subtotal * .1;
-            labelTipTotal.setText("Propina: $" + tip);
-            double totalTip = (total + tip);
-            labelTotal.setText("Total: $" + totalTip);}
-            catch(Exception ex){
-            System.err.println(ex.getMessage());}
-    }                                          
+
+                                        
 
     private void buttonTip4ActionPerformed(java.awt.event.ActionEvent evt) {                                           
             try{tip = subtotal * .2;
@@ -334,7 +328,13 @@ public class Jr2d2 extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonSelectFileActionPerformed
 
     private void buttonTip2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTip2ActionPerformed
-        // TODO add your handling code here:
+                               
+           try{tip = subtotal * .1;
+            labelTipTotal.setText("Propina: $" + tip);
+            double totalTip = (total + tip);
+            labelTotal.setText("Total: $" + totalTip);}
+            catch(Exception ex){
+            System.err.println(ex.getMessage());}
     }//GEN-LAST:event_buttonTip2ActionPerformed
 
     /**

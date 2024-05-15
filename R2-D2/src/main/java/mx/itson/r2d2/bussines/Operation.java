@@ -9,7 +9,7 @@ package mx.itson.r2d2.bussines;
  * @author compu
  */
 public class Operation {
-  public double calcIva (double a,double b ){
+  public static double calcIva (double a,double b ){
         return (a * (b/100));
     
     }
