@@ -52,7 +52,6 @@ public class Jr2d2 extends javax.swing.JFrame {
         labelCupon = new javax.swing.JLabel();
         textFieldCupon = new javax.swing.JTextField();
         labelSubtotal = new javax.swing.JLabel();
-        labelServiceCost = new javax.swing.JLabel();
         labelShippingCost = new javax.swing.JLabel();
         labelDiscount = new javax.swing.JLabel();
         labelIva = new javax.swing.JLabel();
@@ -65,6 +64,8 @@ public class Jr2d2 extends javax.swing.JFrame {
         buttonTip3 = new javax.swing.JButton();
         buttonTip4 = new javax.swing.JButton();
         labelTipTotal = new javax.swing.JLabel();
+        buttonOkCoupon = new javax.swing.JButton();
+        labelCouponConfirm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,7 +103,6 @@ public class Jr2d2 extends javax.swing.JFrame {
         labelCupon.setText("Cupón");
 
         textFieldCupon.setEditable(false);
-        textFieldCupon.setText("no hay cupones disponibles en esta sucursal");
         textFieldCupon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldCuponActionPerformed(evt);
@@ -110,8 +110,6 @@ public class Jr2d2 extends javax.swing.JFrame {
         });
 
         labelSubtotal.setText("Subtotal:");
-
-        labelServiceCost.setText("Costo de servicio:");
 
         labelShippingCost.setText("Costo de envío:");
 
@@ -144,7 +142,17 @@ public class Jr2d2 extends javax.swing.JFrame {
 
         buttonTip4.setText("20%");
 
-        labelTipTotal.setText("Propina:");
+        labelTipTotal.setText("Propina: $ 0");
+
+        buttonOkCoupon.setText("OK");
+        buttonOkCoupon.setActionCommand("OK");
+        buttonOkCoupon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonOkCouponActionPerformed(evt);
+            }
+        });
+
+        labelCouponConfirm.setText(".");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,7 +165,6 @@ public class Jr2d2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelPhoneNumber)
                                     .addComponent(labelUsername)
                                     .addComponent(labelSubtotal)
                                     .addComponent(boxPaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,24 +172,25 @@ public class Jr2d2 extends javax.swing.JFrame {
                                     .addComponent(labelAdress)
                                     .addComponent(labelStore)
                                     .addComponent(buttonSelectFile)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(checkBoxPhoneNumber)
-                                            .addGap(151, 151, 151))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(labelCupon)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGap(151, 151, 151)))
                                     .addComponent(labelTotal)
                                     .addComponent(labelIva)
                                     .addComponent(labelDiscount)
                                     .addComponent(labelShippingCost)
-                                    .addComponent(labelServiceCost))
+                                    .addComponent(labelTipTotal)
+                                    .addComponent(labelPhoneNumber))
                                 .addGap(0, 8, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTipTotal)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(labelCupon)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonOkCoupon)
+                                .addGap(17, 17, 17))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(buttonTip1)
@@ -193,6 +201,10 @@ public class Jr2d2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buttonTip4)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(labelCouponConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,11 +227,14 @@ public class Jr2d2 extends javax.swing.JFrame {
                 .addComponent(labelPaymentMethod)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(boxPaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelCouponConfirm)
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCupon)
-                    .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                    .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonOkCoupon))
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonTip1)
                     .addComponent(buttonTip2)
@@ -229,16 +244,15 @@ public class Jr2d2 extends javax.swing.JFrame {
                 .addComponent(labelSubtotal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTipTotal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelServiceCost)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelShippingCost)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(labelDiscount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelIva)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelTotal))
+                .addComponent(labelTotal)
+                .addContainerGap())
         );
 
         pack();
@@ -337,6 +351,27 @@ public class Jr2d2 extends javax.swing.JFrame {
             System.err.println(ex.getMessage());}
     }//GEN-LAST:event_buttonTip2ActionPerformed
 
+    private void buttonOkCouponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOkCouponActionPerformed
+        try{
+    
+        for(int a = 0; a < coupons.length; a++){
+            String coup = textFieldCupon.getText();
+            if(coupons[a].equals(coup)){
+                labelCouponConfirm.setText("Cupón canjeado con éxito");
+                labelDiscount.setText("Descuento: $" + discount);
+                total -= discount;
+                labelTotal.setText("Total: $ " + total);
+                break;
+            }
+            else{
+                labelCouponConfirm.setText("Cupón invalido");
+            }
+        }
+        }
+        catch(Exception ex){
+            System.err.println(ex.getMessage());}
+         }//GEN-LAST:event_buttonOkCouponActionPerformed
+        
     /**
      * @param args the command line arguments
      */
@@ -374,6 +409,7 @@ public class Jr2d2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxPaymentMethod;
+    private javax.swing.JButton buttonOkCoupon;
     private javax.swing.JButton buttonSelectFile;
     private javax.swing.JButton buttonTip1;
     private javax.swing.JButton buttonTip2;
@@ -382,12 +418,12 @@ public class Jr2d2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxPhoneNumber;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAdress;
+    private javax.swing.JLabel labelCouponConfirm;
     private javax.swing.JLabel labelCupon;
     private javax.swing.JLabel labelDiscount;
     private javax.swing.JLabel labelIva;
     private javax.swing.JLabel labelPaymentMethod;
     private javax.swing.JLabel labelPhoneNumber;
-    private javax.swing.JLabel labelServiceCost;
     private javax.swing.JLabel labelShippingCost;
     private javax.swing.JLabel labelStore;
     private javax.swing.JLabel labelSubtotal;
