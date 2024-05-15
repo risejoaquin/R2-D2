@@ -23,13 +23,13 @@ public class Operation {
     }
     
     /**
-     * Calculates the shipping cost based on the given subtotal and rate.
+     * does the multiplicatin of 2 different values
      * 
-     * @param b the subtotal
-     * @param c the rate
-     * @return the calculated shipping cost
+     * @param b first value
+     * @param c second value
+     * @return the result of the multiplication
      */
-    public double calcShipping(double b, double c) {
+    public double calcMultiplication(double b, double c) {
         return (b * c);
     }
 }

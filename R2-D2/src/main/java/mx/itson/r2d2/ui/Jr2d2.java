@@ -7,6 +7,7 @@ package mx.itson.r2d2.ui;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.text.SimpleDateFormat;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import mx.itson.r2d2.bussines.Operation;
@@ -66,6 +67,9 @@ public class Jr2d2 extends javax.swing.JFrame {
         buttonTip3 = new javax.swing.JButton();
         labelCouponConfirm = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
+        labelStatus = new javax.swing.JLabel();
+        labelDate = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,6 +173,12 @@ public class Jr2d2 extends javax.swing.JFrame {
 
         jLabel1.setText("Añdir propina");
 
+        labelEmail.setText("Email:");
+
+        labelStatus.setText("Estado de envío:");
+
+        labelDate.setText("Fecha del pedido:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,7 +190,7 @@ public class Jr2d2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(labelPhoneNumber)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -189,7 +199,6 @@ public class Jr2d2 extends javax.swing.JFrame {
                             .addComponent(boxPaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelPaymentMethod)
                             .addComponent(labelAdress)
-                            .addComponent(labelStore)
                             .addComponent(buttonSelectFile)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
@@ -201,7 +210,13 @@ public class Jr2d2 extends javax.swing.JFrame {
                                         .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(buttonOkCoupon)
-                                        .addGap(56, 201, Short.MAX_VALUE))))))
+                                        .addGap(56, 201, Short.MAX_VALUE))))
+                            .addComponent(labelEmail)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelStore)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelDate)
+                                .addGap(157, 157, 157))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,6 +241,10 @@ public class Jr2d2 extends javax.swing.JFrame {
                                 .addGap(50, 50, 50)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelStatus)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,12 +252,16 @@ public class Jr2d2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(buttonSelectFile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelStore)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelStore)
+                    .addComponent(labelDate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelUsername)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelEmail)
+                .addGap(4, 4, 4)
                 .addComponent(labelAdress)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,7 +298,9 @@ public class Jr2d2 extends javax.swing.JFrame {
                 .addComponent(labelIva)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTotal)
-                .addGap(41, 41, 41))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelStatus)
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -303,9 +328,14 @@ public class Jr2d2 extends javax.swing.JFrame {
                 Ticket ticket = new Ticket().deserializar(contenido);
                 
                 labelStore.setText("Tienda: " + ticket.getStore());
+                SimpleDateFormat format1 = new SimpleDateFormat("yyy-MM-dd");
+                labelDate.setText("Fecha del pedido: " + format1.format(ticket.getDateOrder()));
                 labelUsername.setText("Entregar a: " + ticket.getClient().getName());
+                labelEmail.setText("Email: " + ticket.getClient().getEmail());
                 labelAdress.setText("Direccion de Entega: " + ticket.getClient().getAddress());
-                checkBoxPhoneNumber.setText (ticket.getClient().getPhoneNumber());
+                checkBoxPhoneNumber.setText (ticket.getClient().getPhoneNumber().toString());
+                labelStatus.setText("Estado de envío: " + ticket.getDelivery().getDeliveryStatus());
+                labelDiscount.setText("Descuento: $0.00");
                 
                 
                 
@@ -323,7 +353,8 @@ public class Jr2d2 extends javax.swing.JFrame {
                 labelSubtotal.setText("Subtotal: $" + subtotal);
                 iva = calc.calcIva(subtotal, ticket.getIva());
                 labelIva.setText("IVA: $" + iva);
-                shippingCost = calc.calcShipping(subtotal, .05);
+                shippingCost = calc.calcMultiplication(subtotal, .03);
+                shippingCost = (shippingCost > 200) ? (shippingCost = 200) : (shippingCost += 0); 
                 labelShippingCost.setText("Costo de envío: $" + (shippingCost));
                 total = subtotal + shippingCost + iva;
                 labelTotal.setText("Total: $" + total);
@@ -334,7 +365,8 @@ public class Jr2d2 extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonSelectFileActionPerformed
 
     private void buttonTip1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTip1ActionPerformed
-            try{tip = subtotal * .05;
+            Operation calc = new Operation();
+            try{tip = calc.calcMultiplication(subtotal, .05);
             labelTipTotal.setText("Propina: $" + tip);
             double totalTip = (total + tip);
             labelTotal.setText("Total: $" + totalTip);}
@@ -343,7 +375,8 @@ public class Jr2d2 extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonTip1ActionPerformed
 
     private void buttonTip2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTip2ActionPerformed
-            try{tip = subtotal * .1;
+            Operation calc = new Operation();
+            try{tip = calc.calcMultiplication(subtotal, .1);
             labelTipTotal.setText("Propina: $" + tip);
             double totalTip = (total + tip);
             labelTotal.setText("Total: $" + totalTip);}
@@ -352,7 +385,8 @@ public class Jr2d2 extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonTip2ActionPerformed
 
     private void buttonTip4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTip4ActionPerformed
-            try{tip = subtotal * .2;
+            Operation calc = new Operation();
+            try{tip = calc.calcMultiplication(subtotal, .2);
             labelTipTotal.setText("Propina: $" + tip);
             double totalTip = (total + tip);
             labelTotal.setText("Total: $" + totalTip);}
@@ -361,7 +395,8 @@ public class Jr2d2 extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonTip4ActionPerformed
 
     private void buttonTip3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTip3ActionPerformed
-            try{tip = subtotal * .15;
+            Operation calc = new Operation();
+            try{tip = calc.calcMultiplication(subtotal, .15);
             labelTipTotal.setText("Propina: $" + tip);
             double totalTip = (total + tip);
             labelTotal.setText("Total: $" + totalTip);}
@@ -438,11 +473,14 @@ public class Jr2d2 extends javax.swing.JFrame {
     private javax.swing.JLabel labelAdress;
     private javax.swing.JLabel labelCouponConfirm;
     private javax.swing.JLabel labelCupon;
+    private javax.swing.JLabel labelDate;
     private javax.swing.JLabel labelDiscount;
+    private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelIva;
     private javax.swing.JLabel labelPaymentMethod;
     private javax.swing.JLabel labelPhoneNumber;
     private javax.swing.JLabel labelShippingCost;
+    private javax.swing.JLabel labelStatus;
     private javax.swing.JLabel labelStore;
     private javax.swing.JLabel labelSubtotal;
     private javax.swing.JLabel labelTipTotal;

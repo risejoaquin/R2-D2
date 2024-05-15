@@ -72,7 +72,7 @@ public class Client {
      * 
      * @return the phoneNumber
      */
-    public String getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -81,7 +81,7 @@ public class Client {
      * 
      * @param phoneNumber the phoneNumber to set
      */
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -123,7 +123,7 @@ public class Client {
     
     private String name;
     private String address;
-    private String phoneNumber;
+    private Long phoneNumber;
     private String email;
     private int width;
     private int length;
