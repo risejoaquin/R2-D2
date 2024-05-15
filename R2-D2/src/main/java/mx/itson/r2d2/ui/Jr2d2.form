@@ -24,20 +24,96 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelPhoneNumber" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelUsername" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelTotal" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelIva" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDiscount" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelShippingCost" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelServiceCost" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelSubtotal" min="-2" max="-2" attributes="0"/>
+                  <Component id="boxPaymentMethod" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelPaymentMethod" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAdress" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelStore" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSelectFile" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="400" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="buttonTip1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="buttonTip2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="buttonTip3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="buttonTip4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="checkBoxPhoneNumber" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="labelCupon" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="textFieldCupon" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
           </Group>
-          <Component id="jScrollPane1" alignment="1" pref="613" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="226" max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="214" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="buttonSelectFile" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelStore" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="168" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelUsername" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelAdress" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkBoxPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="labelPaymentMethod" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="boxPaymentMethod" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelCupon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldCupon" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="buttonTip1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonTip2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonTip3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonTip4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="labelSubtotal" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelServiceCost" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelShippingCost" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelDiscount" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelIva" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelTotal" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -50,24 +126,135 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
+        <Component class="javax.swing.JTable" name="tableProducts">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="6">
-                <Column editable="true" title="CODE" type="java.lang.Object"/>
-                <Column editable="true" title=" PRODUCT" type="java.lang.Object"/>
-                <Column editable="true" title="PRICE" type="java.lang.Object"/>
-                <Column editable="true" title="IVA" type="java.lang.Object"/>
+              <Table columnCount="3" rowCount="6">
+                <Column editable="true" title="Producto" type="java.lang.Object"/>
+                <Column editable="true" title=" Precio" type="java.lang.Object"/>
+                <Column editable="true" title="Cantidad" type="java.lang.Object"/>
               </Table>
             </Property>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="buttonSelectFile">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Seleccionar archivo..."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSelectFileActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelStore">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tienda: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAdress">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Direccion de entrega:"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelPaymentMethod">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Metodo de pago:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="boxPaymentMethod">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Visa 5487"/>
+            <StringItem index="1" value="PayPal"/>
+            <StringItem index="2" value="Efectivo"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelCupon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cup&#xf3;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textFieldCupon">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="no hay cupones disponibles en esta sucursal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldCuponActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="buttonTip1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="5%"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="buttonTip2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="10%"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="buttonTip3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="15%"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="buttonTip4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="20%"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelSubtotal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Subtotal:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelServiceCost">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Costo de servicio:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelShippingCost">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Costo de env&#xed;o:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDiscount">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Descuento:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelIva">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="IVA:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTotal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelUsername">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Entregar a:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelPhoneNumber">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Confirmar n&#xfa;mero de tel&#xe9;fono:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="checkBoxPhoneNumber">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxPhoneNumberActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

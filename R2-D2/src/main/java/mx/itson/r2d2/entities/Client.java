@@ -4,13 +4,26 @@
  */
 package mx.itson.r2d2.entities;
 
-import java.util.Date;
 
 /**
  *
  * @author compu
  */
 public class Client {
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     /**
      * @return the name
@@ -43,48 +56,20 @@ public class Client {
     /**
      * @return the phoneNumber
      */
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
     /**
      * @param phoneNumber the phoneNumber to set
      */
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     /**
-     * @return the Email
-     */
-    public String getEmail() {
-        return Email;
-    }
-
-    /**
-     * @param Email the Email to set
-     */
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    /**
-     * @return the orderDate
-     */
-    public Date getOrderDate() {
-        return orderDate;
-    }
-
-    /**
-     * @param orderDate the orderDate to set
-     */
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    /**
      * @return the width
-     */
+     **/
     public int getWidth() {
         return width;
     }
@@ -112,9 +97,8 @@ public class Client {
     
     private String name;
     private String address;
-    private int phoneNumber;
-    private String Email;
-    private Date orderDate;
+    private String phoneNumber;
+    private String email;
     private int width;
     private int length;
     

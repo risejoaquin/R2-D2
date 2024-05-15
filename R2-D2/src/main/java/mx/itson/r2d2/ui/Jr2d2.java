@@ -4,6 +4,13 @@
  */
 package mx.itson.r2d2.ui;
 
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import javax.swing.JFileChooser;
+import javax.swing.table.DefaultTableModel;
+import mx.itson.r2d2.entities.Product;
+import mx.itson.r2d2.entities.Ticket;
 /**
  *
  * @author compu
@@ -27,49 +34,234 @@ public class Jr2d2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tableProducts = new javax.swing.JTable();
+        buttonSelectFile = new javax.swing.JButton();
+        labelStore = new javax.swing.JLabel();
+        labelAdress = new javax.swing.JLabel();
+        labelPaymentMethod = new javax.swing.JLabel();
+        boxPaymentMethod = new javax.swing.JComboBox<>();
+        labelCupon = new javax.swing.JLabel();
+        textFieldCupon = new javax.swing.JTextField();
+        buttonTip1 = new javax.swing.JToggleButton();
+        buttonTip2 = new javax.swing.JToggleButton();
+        buttonTip3 = new javax.swing.JToggleButton();
+        buttonTip4 = new javax.swing.JToggleButton();
+        labelSubtotal = new javax.swing.JLabel();
+        labelServiceCost = new javax.swing.JLabel();
+        labelShippingCost = new javax.swing.JLabel();
+        labelDiscount = new javax.swing.JLabel();
+        labelIva = new javax.swing.JLabel();
+        labelTotal = new javax.swing.JLabel();
+        labelUsername = new javax.swing.JLabel();
+        labelPhoneNumber = new javax.swing.JLabel();
+        checkBoxPhoneNumber = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "CODE", " PRODUCT", "PRICE", "IVA"
+                "Producto", " Precio", "Cantidad"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableProducts);
 
-        jButton1.setText("jButton1");
+        buttonSelectFile.setText("Seleccionar archivo...");
+        buttonSelectFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSelectFileActionPerformed(evt);
+            }
+        });
+
+        labelStore.setText("Tienda: ");
+
+        labelAdress.setText("Direccion de entrega:");
+        labelAdress.setToolTipText("");
+
+        labelPaymentMethod.setText("Metodo de pago:");
+
+        boxPaymentMethod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visa 5487", "PayPal", "Efectivo" }));
+
+        labelCupon.setText("Cupón");
+
+        textFieldCupon.setEditable(false);
+        textFieldCupon.setText("no hay cupones disponibles en esta sucursal");
+        textFieldCupon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCuponActionPerformed(evt);
+            }
+        });
+
+        buttonTip1.setText("5%");
+
+        buttonTip2.setText("10%");
+
+        buttonTip3.setText("15%");
+
+        buttonTip4.setText("20%");
+
+        labelSubtotal.setText("Subtotal:");
+
+        labelServiceCost.setText("Costo de servicio:");
+
+        labelShippingCost.setText("Costo de envío:");
+
+        labelDiscount.setText("Descuento:");
+
+        labelIva.setText("IVA:");
+
+        labelTotal.setText("Total:");
+
+        labelUsername.setText("Entregar a:");
+
+        labelPhoneNumber.setText("Confirmar número de teléfono:");
+
+        checkBoxPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxPhoneNumberActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPhoneNumber)
+                    .addComponent(labelUsername)
+                    .addComponent(labelTotal)
+                    .addComponent(labelIva)
+                    .addComponent(labelDiscount)
+                    .addComponent(labelShippingCost)
+                    .addComponent(labelServiceCost)
+                    .addComponent(labelSubtotal)
+                    .addComponent(boxPaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPaymentMethod)
+                    .addComponent(labelAdress)
+                    .addComponent(labelStore)
+                    .addComponent(buttonSelectFile)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(buttonTip1)
+                            .addGap(61, 61, 61)
+                            .addComponent(buttonTip2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(buttonTip3)
+                                    .addGap(60, 60, 60)
+                                    .addComponent(buttonTip4))
+                                .addComponent(checkBoxPhoneNumber)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(labelCupon)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(buttonSelectFile)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelStore)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelUsername)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelAdress)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPhoneNumber)
+                    .addComponent(checkBoxPhoneNumber))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelPaymentMethod)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boxPaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCupon)
+                    .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonTip1)
+                    .addComponent(buttonTip2)
+                    .addComponent(buttonTip3)
+                    .addComponent(buttonTip4))
+                .addGap(18, 18, 18)
+                .addComponent(labelSubtotal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelServiceCost)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelShippingCost)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelDiscount)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelIva)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelTotal)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void textFieldCuponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCuponActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCuponActionPerformed
+
+    private void checkBoxPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxPhoneNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkBoxPhoneNumberActionPerformed
+
+    private void buttonSelectFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSelectFileActionPerformed
+        try{JFileChooser fileChooser = new JFileChooser();
+           fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+           
+           if(fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+               File file = fileChooser.getSelectedFile();
+               
+               byte fileBytes[] = Files.readAllBytes(file.toPath());
+               String contenido = new String(fileBytes, StandardCharsets.UTF_8);
+               
+               
+                Ticket ticket = new Ticket().deserializar(contenido);
+                
+                labelStore.setText("Tienda: " + ticket.getStore());
+                labelUsername.setText("Entregar a: " + ticket.getClient().getName());
+                labelAdress.setText("Direccion de Entega: " + ticket.getClient().getAddress());
+                checkBoxPhoneNumber.setText (ticket.getClient().getPhoneNumber());
+                
+                
+                
+                DefaultTableModel model = (DefaultTableModel) tableProducts.getModel();
+                model.setRowCount(0);
+                for(Product c : ticket.getProduct()){
+                    model.addRow(new Object[] {
+                        c.getName(),
+                        c.getPrice(),
+                        c.getAmount()
+                    });
+           }
+                
+           }
+       }catch (Exception ex){
+           System.err.println(ex.getMessage());
+       }
+
+    }//GEN-LAST:event_buttonSelectFileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,8 +299,27 @@ public class Jr2d2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> boxPaymentMethod;
+    private javax.swing.JButton buttonSelectFile;
+    private javax.swing.JToggleButton buttonTip1;
+    private javax.swing.JToggleButton buttonTip2;
+    private javax.swing.JToggleButton buttonTip3;
+    private javax.swing.JToggleButton buttonTip4;
+    private javax.swing.JCheckBox checkBoxPhoneNumber;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel labelAdress;
+    private javax.swing.JLabel labelCupon;
+    private javax.swing.JLabel labelDiscount;
+    private javax.swing.JLabel labelIva;
+    private javax.swing.JLabel labelPaymentMethod;
+    private javax.swing.JLabel labelPhoneNumber;
+    private javax.swing.JLabel labelServiceCost;
+    private javax.swing.JLabel labelShippingCost;
+    private javax.swing.JLabel labelStore;
+    private javax.swing.JLabel labelSubtotal;
+    private javax.swing.JLabel labelTotal;
+    private javax.swing.JLabel labelUsername;
+    private javax.swing.JTable tableProducts;
+    private javax.swing.JTextField textFieldCupon;
     // End of variables declaration//GEN-END:variables
 }

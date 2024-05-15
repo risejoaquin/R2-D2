@@ -12,6 +12,20 @@ package mx.itson.r2d2.entities;
 public class Product {
 
     /**
+     * @return the amount
+     */
+    public double getAmount() {
+        return amount;
+    }
+
+    /**
+     * @param amount the amount to set
+     */
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    /**
      * @return the name
      */
     public String getName() {
@@ -37,24 +51,8 @@ public class Product {
      */
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    /**
-     * @return the iva
-     */
-    public double getIva() {
-        return iva;
-    }
-
-    /**
-     * @param iva the iva to set
-     */
-    public void setIva(double iva) {
-        this.iva = iva;
-    }
-
+    }   
     private String name;
     private double price;
-    private double iva;
-    
+    private double amount;
 }

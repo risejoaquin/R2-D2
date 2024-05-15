@@ -4,6 +4,7 @@
  */
 package mx.itson.r2d2.entities;
 
+import com.google.gson.Gson;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,35 @@ import java.util.List;
  */
 public class Ticket {
 
+    /**
+     * @return the store
+     */
+    public String getStore() {
+        return store;
+    }
+
+    /**
+     * @param store the store to set
+     */
+    public void setStore(String store) {
+        this.store = store;
+    }
+
+    /**
+     * @return the iva
+     */
+    public double getIva() {
+        return iva;
+    }
+
+    /**
+     * @param iva the iva to set
+     */
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    
     /**
      * @return the client
      */
@@ -84,10 +114,22 @@ public class Ticket {
         this.dateDelivery = dateDelivery;
     }
    
+    
+    private String store;
     private Client client;
     private Delivery delivery;
     private List<Product> product;
     private Date dateOrder;
     private Date dateDelivery;
+    private double iva;
     
-}
+    public Ticket deserializar(String json){
+        Ticket ticket = new Ticket();
+        try{
+            ticket = new Gson().fromJson(json, Ticket.class);
+            
+        } catch(Exception ex){
+            System.err.println("Ocurrio un error al deserializar" + ex.getMessage());
+        }
+        return ticket;
+}}

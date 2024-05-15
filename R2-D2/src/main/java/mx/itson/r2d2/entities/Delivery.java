@@ -12,7 +12,19 @@ import java.util.Date;
  */
 public class Delivery {
 
-    
+    /**
+     * @return the orderDate
+     */
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    /**
+     * @param orderDate the orderDate to set
+     */
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
 
     /**
      * @return the deliveryDate
@@ -41,7 +53,8 @@ public class Delivery {
     public void setDeliveryStatus(String deliveryStatus) {
         this.deliveryStatus = deliveryStatus;
     }
-    
+
+    private Date orderDate;
     private Date deliveryDate;
     private String deliveryStatus;
 }

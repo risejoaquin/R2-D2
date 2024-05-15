@@ -9,5 +9,7 @@ package mx.itson.r2d2.ui;
  * @author compu
  */
 public class r2d2main {
-    
+    public static void main(String[] args) {
+        
+    }
 }
