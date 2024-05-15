@@ -43,14 +43,14 @@ public class Client {
      * @return the address
      */
     public String getAddress() {
-        return address;
+        return adress;
     }
 
     /**
      * @param address the address to set
      */
     public void setAddress(String address) {
-        this.address = address;
+        this.adress = address;
     }
 
     /**
@@ -96,7 +96,7 @@ public class Client {
     }
     
     private String name;
-    private String address;
+    private String adress;
     private String phoneNumber;
     private String email;
     private int width;
