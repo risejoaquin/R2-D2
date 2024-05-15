@@ -6,15 +6,17 @@ package mx.itson.r2d2.entities;
 
 import java.util.Date;
 
-
-
 /**
- *
+ * Represents a delivery entity with order and delivery information.
+ * This class provides methods to set and get delivery data.
+ * 
  * @author compu
  */
 public class Delivery {
 
     /**
+     * Retrieves the order date of the delivery.
+     * 
      * @return the orderDate
      */
     public Date getOrderDate() {
@@ -22,6 +24,8 @@ public class Delivery {
     }
 
     /**
+     * Sets the order date of the delivery.
+     * 
      * @param orderDate the orderDate to set
      */
     public void setOrderDate(Date orderDate) {
@@ -29,6 +33,8 @@ public class Delivery {
     }
 
     /**
+     * Retrieves the delivery date of the delivery.
+     * 
      * @return the deliveryDate
      */
     public Date getDeliveryDate() {
@@ -36,6 +42,8 @@ public class Delivery {
     }
 
     /**
+     * Sets the delivery date of the delivery.
+     * 
      * @param deliveryDate the deliveryDate to set
      */
     public void setDeliveryDate(Date deliveryDate) {
@@ -43,6 +51,8 @@ public class Delivery {
     }
 
     /**
+     * Retrieves the delivery status of the delivery.
+     * 
      * @return the deliveryStatus
      */
     public String getDeliveryStatus() {
@@ -50,6 +60,8 @@ public class Delivery {
     }
 
     /**
+     * Sets the delivery status of the delivery.
+     * 
      * @param deliveryStatus the deliveryStatus to set
      */
     public void setDeliveryStatus(String deliveryStatus) {

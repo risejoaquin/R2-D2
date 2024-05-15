@@ -65,6 +65,7 @@ public class Jr2d2 extends javax.swing.JFrame {
         buttonTip4 = new javax.swing.JButton();
         buttonTip3 = new javax.swing.JButton();
         labelCouponConfirm = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,7 +84,7 @@ public class Jr2d2 extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tableProducts);
 
-        buttonSelectFile.setText("Seleccionar archivo...");
+        buttonSelectFile.setText("Seleccionar orden");
         buttonSelectFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonSelectFileActionPerformed(evt);
@@ -129,7 +130,7 @@ public class Jr2d2 extends javax.swing.JFrame {
             }
         });
 
-        buttonOkCoupon.setText("Ok");
+        buttonOkCoupon.setText("Aplicar");
         buttonOkCoupon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonOkCouponActionPerformed(evt);
@@ -166,51 +167,65 @@ public class Jr2d2 extends javax.swing.JFrame {
 
         labelCouponConfirm.setText(".");
 
+        jLabel1.setText("Añdir propina");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelPhoneNumber)
-                        .addGap(93, 93, 93)
-                        .addComponent(checkBoxPhoneNumber))
-                    .addComponent(labelUsername)
-                    .addComponent(labelTotal)
-                    .addComponent(labelIva)
-                    .addComponent(labelDiscount)
-                    .addComponent(labelShippingCost)
-                    .addComponent(labelTipTotal)
-                    .addComponent(labelSubtotal)
-                    .addComponent(boxPaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelPaymentMethod)
-                    .addComponent(labelAdress)
-                    .addComponent(labelStore)
-                    .addComponent(buttonSelectFile)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(buttonTip1)
-                                    .addGap(38, 38, 38)
-                                    .addComponent(buttonTip2)
-                                    .addGap(38, 38, 38)
-                                    .addComponent(buttonTip3)
-                                    .addGap(10, 10, 10))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(labelCupon)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(labelCouponConfirm)
-                                        .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(buttonOkCoupon, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(buttonTip4, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addGap(0, 14, Short.MAX_VALUE))
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelPhoneNumber)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkBoxPhoneNumber))
+                            .addComponent(labelUsername)
+                            .addComponent(boxPaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelPaymentMethod)
+                            .addComponent(labelAdress)
+                            .addComponent(labelStore)
+                            .addComponent(buttonSelectFile)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(labelCupon)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelCouponConfirm)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(buttonOkCoupon)
+                                        .addGap(56, 201, Short.MAX_VALUE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTotal)
+                            .addComponent(labelIva)
+                            .addComponent(labelDiscount)
+                            .addComponent(labelShippingCost)
+                            .addComponent(labelTipTotal)
+                            .addComponent(labelSubtotal)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(buttonTip1)
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonTip2)
+                                .addGap(38, 38, 38)
+                                .addComponent(buttonTip3)
+                                .addGap(36, 36, 36)
+                                .addComponent(buttonTip4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,15 +235,15 @@ public class Jr2d2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelStore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelUsername)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelAdress)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPhoneNumber)
-                    .addComponent(checkBoxPhoneNumber))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkBoxPhoneNumber)
+                    .addComponent(labelPhoneNumber))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelPaymentMethod)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -240,13 +255,15 @@ public class Jr2d2 extends javax.swing.JFrame {
                     .addComponent(labelCupon)
                     .addComponent(textFieldCupon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonOkCoupon))
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonTip1)
                     .addComponent(buttonTip2)
                     .addComponent(buttonTip4)
                     .addComponent(buttonTip3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(labelSubtotal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTipTotal)
@@ -258,7 +275,7 @@ public class Jr2d2 extends javax.swing.JFrame {
                 .addComponent(labelIva)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTotal)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
 
         pack();
@@ -416,6 +433,7 @@ public class Jr2d2 extends javax.swing.JFrame {
     private javax.swing.JButton buttonTip3;
     private javax.swing.JButton buttonTip4;
     private javax.swing.JCheckBox checkBoxPhoneNumber;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAdress;
     private javax.swing.JLabel labelCouponConfirm;
