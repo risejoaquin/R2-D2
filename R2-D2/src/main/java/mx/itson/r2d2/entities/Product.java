@@ -4,14 +4,17 @@
  */
 package mx.itson.r2d2.entities;
 
-
 /**
- *
+ * Represents a product entity with basic information.
+ * This class provides methods to set and get product data.
+ * 
  * @author compu
  */
 public class Product {
 
     /**
+     * Retrieves the amount of the product.
+     * 
      * @return the amount
      */
     public double getAmount() {
@@ -19,6 +22,8 @@ public class Product {
     }
 
     /**
+     * Sets the amount of the product.
+     * 
      * @param amount the amount to set
      */
     public void setAmount(double amount) {
@@ -26,6 +31,8 @@ public class Product {
     }
 
     /**
+     * Retrieves the name of the product.
+     * 
      * @return the name
      */
     public String getName() {
@@ -33,6 +40,8 @@ public class Product {
     }
 
     /**
+     * Sets the name of the product.
+     * 
      * @param name the name to set
      */
     public void setName(String name) {
@@ -40,6 +49,8 @@ public class Product {
     }
 
     /**
+     * Retrieves the price of the product.
+     * 
      * @return the price
      */
     public double getPrice() {
@@ -47,11 +58,14 @@ public class Product {
     }
 
     /**
+     * Sets the price of the product.
+     * 
      * @param price the price to set
      */
     public void setPrice(double price) {
         this.price = price;
     }   
+    
     private String name;
     private double price;
     private double amount;

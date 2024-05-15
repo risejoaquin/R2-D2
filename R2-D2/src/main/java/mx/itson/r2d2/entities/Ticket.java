@@ -16,6 +16,8 @@ import java.util.List;
 public class Ticket {
 
     /**
+     * get name store
+     * 
      * @return the store
      */
     public String getStore() {
@@ -23,6 +25,8 @@ public class Ticket {
     }
 
     /**
+     * set name store
+     * 
      * @param store the store to set
      */
     public void setStore(String store) {
@@ -30,21 +34,8 @@ public class Ticket {
     }
 
     /**
-     * @return the iva
-     */
-    public double getIva() {
-        return iva;
-    }
-
-    /**
-     * @param iva the iva to set
-     */
-    public void setIva(double iva) {
-        this.iva = iva;
-    }
-
-    
-    /**
+     * get client information
+     * 
      * @return the client
      */
     public Client getClient() {
@@ -52,6 +43,8 @@ public class Ticket {
     }
 
     /**
+     * set client information
+     * 
      * @param client the client to set
      */
     public void setClient(Client client) {
@@ -59,6 +52,8 @@ public class Ticket {
     }
 
     /**
+     * get delivery information
+     * 
      * @return the delivery
      */
     public Delivery getDelivery() {
@@ -66,6 +61,8 @@ public class Ticket {
     }
 
     /**
+     * set delievry information
+     * 
      * @param delivery the delivery to set
      */
     public void setDelivery(Delivery delivery) {
@@ -73,6 +70,8 @@ public class Ticket {
     }
 
     /**
+     * get produc information
+     * 
      * @return the product
      */
     public List<Product> getProduct() {
@@ -80,6 +79,8 @@ public class Ticket {
     }
 
     /**
+     * set product information
+     * 
      * @param product the product to set
      */
     public void setProduct(List<Product> product) {
@@ -87,6 +88,7 @@ public class Ticket {
     }
 
     /**
+     * get date order
      * @return the dateOrder
      */
     public Date getDateOrder() {
@@ -94,6 +96,8 @@ public class Ticket {
     }
 
     /**
+     * set date order
+     * 
      * @param dateOrder the dateOrder to set
      */
     public void setDateOrder(Date dateOrder) {
@@ -101,6 +105,8 @@ public class Ticket {
     }
 
     /**
+     * get date delivery
+     * 
      * @return the dateDelivery
      */
     public Date getDateDelivery() {
@@ -108,12 +114,32 @@ public class Ticket {
     }
 
     /**
+     * set delivery date
+     * 
      * @param dateDelivery the dateDelivery to set
      */
     public void setDateDelivery(Date dateDelivery) {
         this.dateDelivery = dateDelivery;
     }
-   
+
+    /**
+     * get product iva
+     * 
+     * @return the iva
+     */
+    public double getIva() {
+        return iva;
+    }
+
+    /**
+     * set final iva product
+     * 
+     * @param iva the iva to set
+     */
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
     
     private String store;
     private Client client;

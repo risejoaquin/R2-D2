@@ -6,12 +6,16 @@ package mx.itson.r2d2.entities;
 
 
 /**
- *
+ * Represents a client entity with basic information.
+ * This class provides methods to set and get client data.
+ * 
  * @author compu
  */
 public class Client {
 
     /**
+     * Retrieves the email of the client.
+     * 
      * @return the email
      */
     public String getEmail() {
@@ -19,6 +23,8 @@ public class Client {
     }
 
     /**
+     * Sets the email of the client.
+     * 
      * @param email the email to set
      */
     public void setEmail(String email) {
@@ -26,6 +32,8 @@ public class Client {
     }
 
     /**
+     * Retrieves the name of the client.
+     * 
      * @return the name
      */
     public String getName() {
@@ -33,6 +41,8 @@ public class Client {
     }
 
     /**
+     * Sets the name of the client.
+     * 
      * @param name the name to set
      */
     public void setName(String name) {
@@ -40,20 +50,26 @@ public class Client {
     }
 
     /**
+     * Retrieves the address of the client.
+     * 
      * @return the address
      */
     public String getAddress() {
-        return adress;
+        return address;
     }
 
     /**
+     * Sets the address of the client.
+     * 
      * @param address the address to set
      */
     public void setAddress(String address) {
-        this.adress = address;
+        this.address = address;
     }
 
     /**
+     * Retrieves the phone number of the client.
+     * 
      * @return the phoneNumber
      */
     public String getPhoneNumber() {
@@ -61,6 +77,8 @@ public class Client {
     }
 
     /**
+     * Sets the phone number of the client.
+     * 
      * @param phoneNumber the phoneNumber to set
      */
     public void setPhoneNumber(String phoneNumber) {
@@ -68,6 +86,8 @@ public class Client {
     }
 
     /**
+     * Retrieves the width of the client.
+     * 
      * @return the width
      **/
     public int getWidth() {
@@ -75,6 +95,8 @@ public class Client {
     }
 
     /**
+     * Sets the width of the client.
+     * 
      * @param width the width to set
      */
     public void setWidth(int width) {
@@ -82,6 +104,8 @@ public class Client {
     }
 
     /**
+     * Retrieves the length of the client.
+     * 
      * @return the length
      */
     public int getLength() {
@@ -89,6 +113,8 @@ public class Client {
     }
 
     /**
+     * Sets the length of the client.
+     * 
      * @param length the length to set
      */
     public void setLength(int length) {
@@ -96,7 +122,7 @@ public class Client {
     }
     
     private String name;
-    private String adress;
+    private String address;
     private String phoneNumber;
     private String email;
     private int width;
