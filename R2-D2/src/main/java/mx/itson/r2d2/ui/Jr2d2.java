@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
+import mx.itson.r2d2.bussines.Operation;
 import mx.itson.r2d2.entities.Product;
 import mx.itson.r2d2.entities.Ticket;
 /**
@@ -23,6 +24,14 @@ public class Jr2d2 extends javax.swing.JFrame {
     public Jr2d2() {
         initComponents();
     }
+    double subtotal = 0;
+    double iva = 0;
+    double discount = 50;
+    double shippingCost = 0;
+    double tip = 0;
+    double total = 0;
+    
+    String[] coupons = {"programacion", "java", "ternary", "boolean"};
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -246,16 +255,24 @@ public class Jr2d2 extends javax.swing.JFrame {
                 
                 
                 
-                DefaultTableModel model = (DefaultTableModel) tableProducts.getModel();
+               DefaultTableModel model = (DefaultTableModel) tableProducts.getModel();
                 model.setRowCount(0);
                 for(Product c : ticket.getProduct()){
+                    subtotal += (c.getPrice()*c.getAmount());
                     model.addRow(new Object[] {
                         c.getName(),
                         c.getPrice(),
                         c.getAmount()
                     });
            }
-                
+                Operation calc = new Operation();
+                labelSubtotal.setText("Subtotal: $" + subtotal);
+                iva = calc.calcIva(subtotal, ticket.getIva());
+                labelIva.setText("IVA: $" + iva);
+                shippingCost = calc.calcShipping(subtotal, .05);
+                labelShippingCost.setText("Costo de envío: $" + (shippingCost));
+                total = subtotal + shippingCost + iva;
+                labelTotal.setText("Total: $" + total);
            }
        }catch (Exception ex){
            System.err.println(ex.getMessage());

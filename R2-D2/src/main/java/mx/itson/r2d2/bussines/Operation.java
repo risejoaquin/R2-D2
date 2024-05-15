@@ -9,8 +9,11 @@ package mx.itson.r2d2.bussines;
  * @author compu
  */
 public class Operation {
-    public static void main(String[] args) {
-        System.out.println(":)");
-        System.out.println("Salchichon");
+  public double calcIva (double a,double b ){
+        return (a * (b/100));
+    
+    }
+    public double calcShipping (double b, double c){
+        return (b * c);
     }
 }
